@@ -14,6 +14,14 @@ def createRandomFromSegment(z0, z1, N):
 def createRandomFromCircle(z0, R, N):
     return [z0+rect(R, uniform(-pi, pi)) for i in range(N)]
 
+def createRandomFromShape(x0, x1, f1, f2, N):
+    ret=[]
+    for i in range(N):
+        x=uniform(x0, x1)
+        y=uniform(f1(x), f2(x))
+        ret.append(complex(x, y))
+    return ret
+
 def apply(function, listNumbers):
     return [function(z) for z in listNumbers]
 

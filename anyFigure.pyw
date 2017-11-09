@@ -5,6 +5,7 @@ from sector import *
 from segment import *
 from disc import *
 from circle import *
+from shape import *
 
 
 
@@ -21,13 +22,14 @@ def anyFigure():
     1)A sector of the complex plane :)\n\
     2)A segment in the complex plane :}\n\
     3)A disc in the complex plane :o\n\
-    4)A circle in the complex plane :D")
+    4)A circle in the complex plane :D\n\
+    5)A more complex shape :$")
     choice=input('>>> ')
     if choice=='':
         choice=4
         print("Default choice: 4) circle\n")
     else:
-        choice=int(choice)%5
+        choice=int(choice)%6
         print("")
 
     #execute the right plotting function
@@ -41,6 +43,8 @@ def anyFigure():
         disc(f)
     elif choice==4:
         circle(f)
+    elif choice==4:
+        shape(f)
 
 
 
@@ -58,6 +62,8 @@ class AnyFigure(Frame):
         #Title label
         Label(self, text="Select a figure to plot :", \
               fg='red', font=('Times', -20, 'bold')).pack(pady=20)
+
+        
         #circle
         Button(self, text='Circle', bg='green', \
                command=self.circle, width=20).pack(pady=10)
@@ -70,6 +76,11 @@ class AnyFigure(Frame):
         #sector
         Button(self, text='Sector', bg='orange', \
                command=self.sector, width=20).pack(pady=10)
+        #more complicated shape
+        Button(self, text='Other Shape', bg='yellow', \
+               command=self.shape, width=20).pack(pady=10)
+
+        
         #quit
         Button(self, text='Quit', bg='red', \
                command=boss.destroy).pack(pady=20)
@@ -93,6 +104,10 @@ class AnyFigure(Frame):
     def sector(self):
         root=Tk()
         Sector(root).pack(anchor='w', padx=5, pady=5)
+    #complicated shape method
+    def shape(self):
+        root=Tk()
+        Shape(root).pack(anchor='w', padx=5, pady=5)
     
 
 
