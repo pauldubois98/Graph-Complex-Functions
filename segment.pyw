@@ -40,6 +40,9 @@ class Segment(Frame):
         ##graph objects
         Label(self, text='{ z: z = z0 + (z1 - z0) * a;   0 < a < 1 }', \
               font=('Times', -30, 'bold'), fg='red').pack()
+        #website link (explanation of the shape)
+        Button(self, text='Shapes explanations', \
+               command=lambda e=None: webbrowser.open_new("shapes.html")).pack()
         #z0
         Label(self, text='Starting point of the segment (z0)', \
               font=('Times', -20, 'bold')).pack()

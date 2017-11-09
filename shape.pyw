@@ -26,8 +26,6 @@ I will create N "random" points""")
 
 
 
-
-
 class Shape(Frame):
     def __init__(self, boss=None, **arg):
         #class __init__
@@ -46,6 +44,9 @@ class Shape(Frame):
         ##graph objects
         Label(self, text='{ z = x + iy :   x0 < x < x1 & f1(x) < y < f2(x) }', \
               font=('Times', -30, 'bold'), fg='red').pack(pady=15)
+        #website link (explanation of the shape)
+        Button(self, text='Shapes explanations', \
+               command=lambda e=None: webbrowser.open_new("shapes.html")).pack()
         #x0
         Label(self, text='Lower bound for x (x0)', \
               font=('Times', -20, 'bold')).pack()
@@ -65,7 +66,7 @@ class Shape(Frame):
               font=('Times', -20, 'bold')).pack()
         self.func1Input=Entry(self, width=25)
         self.func1Input.pack(anchor='w')
-        self.func1Input.insert(0, '0')
+        self.func1Input.insert(0, 'x*x')
         Label(self, text='(f1(x) should be real, \
 I will take the modulus if not)').pack(anchor='w')
         #f2
@@ -73,7 +74,7 @@ I will take the modulus if not)').pack(anchor='w')
               font=('Times', -20, 'bold')).pack()
         self.func2Input=Entry(self, width=25)
         self.func2Input.pack(anchor='w')
-        self.func2Input.insert(0, 'x*x')
+        self.func2Input.insert(0, 'x')
         Label(self, text='(f1(x) should be real, \
 I will take the modulus if not)').pack(anchor='w')
         #N
@@ -154,8 +155,6 @@ I will take the modulus if not)').pack(anchor='w')
                                                  fg='green')
                                 return True
         return False
-
-                
         
 
 
@@ -167,14 +166,3 @@ if __name__=='__main__':
 
 
 
-
-
-
-if __name__=='__main__':
-    #we ask for the function
-    #with this technic, the user can put anything :D
-    print("Please type in the (complex) function that you want to plot:")
-    func=ask('f(z)=', 'pow(z-1, 3)')
-    f=lambda z: eval(func)
-    
-    shape(f)

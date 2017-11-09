@@ -45,6 +45,9 @@ class Sector(Frame):
         ##graph objects
         Label(self, text='{ z: @0 < arg(z) < @1   (& | z | < R)}', \
               font=('Times', -30, 'bold'), fg='red').pack()
+        #website link (explanation of the shape)
+        Button(self, text='Shapes explanations', \
+               command=lambda e=None: webbrowser.open_new("shapes.html")).pack()
         #z0
         Label(self, text='Starting point of the segment (@0)', \
               font=('Times', -20, 'bold')).pack()

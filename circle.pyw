@@ -37,6 +37,9 @@ class Circle(Frame):
         ##graph objects
         Label(self, text='{ z: | z - z0 | = R }', \
               font=('Times', -30, 'bold'), fg='red').pack(pady=15)
+        #website link (explanation of the shape)
+        Button(self, text='Shapes explanations', \
+               command=lambda e=None: webbrowser.open_new("shapes.html")).pack()
         #z0
         Label(self, text='Center of the circle (z0)', \
               font=('Times', -20, 'bold')).pack()

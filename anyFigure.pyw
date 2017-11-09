@@ -61,29 +61,33 @@ class AnyFigure(Frame):
                command=self.about).pack(pady=0, side=TOP)
         #Title label
         Label(self, text="Select a figure to plot :", \
-              fg='red', font=('Times', -20, 'bold')).pack(pady=20)
+              fg='red', font=('Times', -20, 'bold')).pack(pady=10)
+        #website link (explanation of the shape)
+        Button(self, text='Shapes explanations', bg='grey',\
+               command=lambda e=None: webbrowser.open_new("shapes.html"), \
+               width=15).pack(pady=10)
 
         
         #circle
         Button(self, text='Circle', bg='green', \
-               command=self.circle, width=20).pack(pady=10)
+               command=self.circle, width=20).pack(pady=5)
         #disc
         Button(self, text='Disc', bg='blue', \
-               command=self.disc, width=20).pack(pady=10)
+               command=self.disc, width=20).pack(pady=5)
         #segment
         Button(self, text='Segment', bg='purple', \
-               command=self.segment, width=20).pack(pady=10)
+               command=self.segment, width=20).pack(pady=5)
         #sector
         Button(self, text='Sector', bg='orange', \
-               command=self.sector, width=20).pack(pady=10)
+               command=self.sector, width=20).pack(pady=5)
         #more complicated shape
         Button(self, text='Other Shape', bg='yellow', \
-               command=self.shape, width=20).pack(pady=10)
+               command=self.shape, width=20).pack(pady=5)
 
         
         #quit
         Button(self, text='Quit', bg='red', \
-               command=boss.destroy).pack(pady=20)
+               command=boss.destroy, width=5).pack(pady=20)
 
     #about me method
     def about(self):
