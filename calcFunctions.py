@@ -22,6 +22,14 @@ def createRandomFromShape(x0, x1, f1, f2, N):
         ret.append(complex(x, y))
     return ret
 
+def createRandomFromPath(x0, x1, f1, N):
+    ret=[]
+    for i in range(N):
+        x=uniform(x0, x1)
+        y=f1(x)
+        ret.append(complex(x, y))
+    return ret
+
 def apply(function, listNumbers):
     return [function(z) for z in listNumbers]
 

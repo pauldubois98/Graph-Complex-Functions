@@ -6,6 +6,7 @@ from segment import *
 from disc import *
 from circle import *
 from shape import *
+from path import *
 
 
 
@@ -29,7 +30,7 @@ def anyFigure():
         choice=4
         print("Default choice: 4) circle\n")
     else:
-        choice=int(choice)%6
+        choice=int(choice)%7
         print("")
 
     #execute the right plotting function
@@ -43,8 +44,10 @@ def anyFigure():
         disc(f)
     elif choice==4:
         circle(f)
-    elif choice==4:
+    elif choice==5:
         shape(f)
+    elif choice==6:
+        path(f)
 
 
 
@@ -83,6 +86,9 @@ class AnyFigure(Frame):
         #more complicated shape
         Button(self, text='Other Shape', bg='yellow', \
                command=self.shape, width=20).pack(pady=5)
+        #more complicated shape
+        Button(self, text='Other Path', bg='white', \
+               command=self.path, width=20).pack(pady=5)
 
         
         #quit
@@ -112,6 +118,10 @@ class AnyFigure(Frame):
     def shape(self):
         root=Tk()
         Shape(root).pack(anchor='w', padx=5, pady=5)
+    #complicated path method
+    def path(self):
+        root=Tk()
+        Path(root).pack(anchor='w', padx=5, pady=5)
     
 
 

@@ -63,6 +63,8 @@ and their images (w=f(z))')
     #axis
     plt.axhline(y=0, color='k')
     plt.axvline(x=0, color='k')
+    #title
+    #plt.title('blue: shape; red: image of the shape')
 
     #get the user know the colors
     print("\n\n\twith w=f(z):\n")

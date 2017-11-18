@@ -1,10 +1,10 @@
 # Graph-Complex-Functions
 An easy way to plot the images of simple figure by a complex function
 
-***windowInterface.pyw***: Window interface of the program;
+***MAINwindow.pyw***: Window interface of the program;
 Any of the **.pyw* files will give you a window interface.
 
-***textInterface.py***: Text interface
+***MAINtext.py***: Text interface
 
 
 #### A few screen shots:
